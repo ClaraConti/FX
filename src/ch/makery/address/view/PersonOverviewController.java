@@ -60,4 +60,32 @@ public class PersonOverviewController {
         // Add observable list data to the table
         personTable.setItems(mainApp.getPersonData());
     }
+    
+    /**
+    * Rellena todos los campos de la persona para mostrar detalles de la persona.
+    * Si, la persona especificada es nula, se borran todos los campos del texto
+    * 
+    * @param person la persona o nula
+    */
+   private void showPersonDetails(Person person) {
+       if (person != null) {
+           // Fill the labels with info from the person object.
+           firstNameLabel.setText(person.getFirstName());
+           lastNameLabel.setText(person.getLastName());
+           streetLabel.setText(person.getStreet());
+           postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
+           cityLabel.setText(person.getCity());
+
+           // TODO: Necesitamos una forma de convertir el cumpleaños en una cadena! 
+           // EtiquetaDeCumpleaños.setText(...);
+       } else {
+           // Person is null, remove all the text.
+           firstNameLabel.setText("");
+           lastNameLabel.setText("");
+           streetLabel.setText("");
+           postalCodeLabel.setText("");
+           cityLabel.setText("");
+           birthdayLabel.setText("");
+       }
+   }
 }

@@ -1,4 +1,4 @@
-package ch.makery.address.view;
+package ch.makery.address.view;//Tutorial 4
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
